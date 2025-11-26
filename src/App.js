@@ -370,7 +370,7 @@ export default function MemoryCraftSite() {
                 },
                 {
                   title: "Retrouvailles",
-                  img: "https://res.cloudinary.com/fatmakmiha/image/upload/v1764105843/family_dwhzvk.jpg",
+                  img: "https://res.cloudinary.com/fatmakmiha/image/upload/v1764105853/family2_zwtxtc.jpg",
                   icon: "👥",
                   desc: "Moments d’émotion pure, étreintes retrouvées, larmes de joie.",
                 },
