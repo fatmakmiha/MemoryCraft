@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Plan de Présentation — MemoryCraft</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png"
+        href="https://res.cloudinary.com/fatmakmiha/image/upload/v1764183304/Copilot_20251126_190234_d9cfy5.png">
+
+
+    <style>
+        :root {
+            --bg: #FFF7EE;
+            --card: #ffffff;
+            --accent: #F7D18A;
+            --warm: #5F4A39;
+            --muted: #6B7280;
+            --glass: rgba(255, 255, 255, 0.72);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #FFFDFC 0%, var(--bg) 60%);
+            color: var(--warm);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 32px;
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #F6B6A8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(95, 74, 57, 0.12);
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: -0.2px;
+        }
+
+        p.lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        main.card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: 0 8px 30px rgba(95, 74, 57, 0.06);
+            border: 1px solid rgba(95, 74, 57, 0.04);
+        }
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .pill {
+            background: var(--glass);
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+            color: var(--warm);
+            font-size: 13px;
+            border: 1px solid rgba(95, 74, 57, 0.04);
+        }
+
+        /* PLAN LIST */
+        .plan-list {
+            margin-top: 8px
+        }
+
+        .step {
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 12px;
+            background: linear-gradient(180deg, rgba(247, 209, 138, 0.08), rgba(255, 255, 255, 0.6));
+            border: 1px solid rgba(95, 74, 57, 0.04);
+            display: grid;
+            grid-template-columns: 52px 1fr 90px;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .step .num {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            box-shadow: 0 6px 12px rgba(95, 74, 57, 0.08);
+            font-size: 16px;
+        }
+
+        .step h3 {
+            margin: 0;
+            font-size: 16px
+        }
+
+        .step p {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.45
+        }
+
+        /* Accordéon détails */
+        .details {
+            grid-column: 1/-1;
+            margin-top: 10px;
+            display: none;
+            padding-top: 8px;
+            border-top: 1px dashed rgba(95, 74, 57, 0.06);
+        }
+
+        .step.expanded .details {
+            display: block
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(95, 74, 57, 0.03);
+            box-shadow: 0 4px 12px rgba(95, 74, 57, 0.03);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+            justify-self: end;
+            margin-top: 4px;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid rgba(95, 74, 57, 0.08);
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--warm);
+        }
+
+        .btn.primary {
+            background: var(--accent);
+            color: #3b2a20;
+            border: none;
+            box-shadow: 0 8px 20px rgba(247, 209, 138, 0.18);
+        }
+
+        footer {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* Print */
+        @media print {
+            body {
+                padding: 10mm;
+                background: white
+            }
+
+            .logo,
+            .actions,
+            header,
+            footer {
+                display: none
+            }
+
+            main.card {
+                box-shadow: none;
+                border: none
+            }
+        }
+
+        /* Responsive */
+        @media (max-width:720px) {
+            .step {
+                grid-template-columns: 44px 1fr;
+                gap: 12px
+            }
+
+            .actions {
+                grid-column: 1/-1;
+                justify-content: flex-start
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #FFFDFC 0%, var(--bg) 60%);
+            color: var(--warm);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 32px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Photos éparpillées derrière le contenu */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFF7EE;
+            /* base warm */
+            background-image:
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105915/Gemini_Generated_Image_t96rjt96rjt96rjt_nxyhzn.png'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105909/Gemini_Generated_Image_3ggti3ggti3ggti3_xsxk41.png'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105840/experience_csmh5t.jpg'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105834/unnamed_yfj6he.jpg'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764098332/WhatsApp_Image_2025-11-25_%C3%A0_15.59.11_e0d791f1_curb3t.jpg'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105915/Gemini_Generated_Image_t96rjt96rjt96rjt_nxyhzn.png'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105909/Gemini_Generated_Image_3ggti3ggti3ggti3_xsxk41.png'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105840/experience_csmh5t.jpg'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764105834/unnamed_yfj6he.jpg'),
+                url('https://res.cloudinary.com/fatmakmiha/image/upload/v1764098410/Copilot_20251125_1514333_swluby.png');
+            background-repeat: no-repeat;
+            background-position: 10% 20%, 70% 10%, 50% 70%, 80% 50%, 20% 80%, 30% 40%, 60% 60%, 15% 75%, 85% 25%, 50% 50%;
+            background-size: 150px, 100px, 120px, 90px, 110px, 130px, 100px, 120px, 80px, 140px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+            transform: rotate(-2deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="brand">
+                <div class="logo">MC</div>
+                <div>
+                    <h1>MemoryCraft — Plan de présentation</h1>
+                    <p class="lead">Sculpteur de Souvenirs Vivants — plan structuré et prêt à présenter</p>
+                </div>
+            </div>
+
+            <div class="tags" aria-hidden>
+                <div class="pill">Imprimable</div>
+                <div class="pill">Interactif</div>
+            </div>
+        </header>
+        <main class="card" role="main" aria-labelledby="title">
+            <div class="meta">
+                <div>
+                    <strong id="title">PLAN DE PRÉSENTATION</strong>
+                    <div style="color:var(--muted);font-size:13px;margin-top:6px">Métier futuriste :
+                        <strong>MemoryCraft</strong>
+                    </div>
+                </div>
+
+                <div class="actions" role="toolbar" aria-label="Actions">
+                    <button class="btn" onclick="toggleAll(false)">Réduire tout</button>
+                    <button class="btn" onclick="toggleAll(true)">Déplier tout</button>
+                    <button class="btn primary" onclick="window.print()">Imprimer / PDF</button>
+                </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="plan-list" id="planList">
+                <!-- Step template repeated -->
+                <article class="step" data-step="1">
+                    <div class="num">1</div>
+                    <div>
+                        <h3>Introduction</h3>
+                        <p>Présentation du concept général et pourquoi un métier axé sur l’émotion humaine est
+                            nécessaire aujourd’hui.</p>
+                    </div>
+                </article>
+                <article class="step" data-step="2">
+                    <div class="num">2</div>
+                    <div>
+                        <h3>Définition du métier</h3>
+                        <p>Qu'est-ce qu'un MemoryCraft ? Rôle principal : sculpter des souvenirs vivants, accompagnement
+                            humain et artistique.</p>
+                    </div>
+                </article>
+                <article class="step" data-step="3">
+                    <div class="num">3</div>
+                    <div>
+                        <h3>Le processus de travail</h3>
+                        <p>Captation → Sculpture et Montage → Création de capsule AR → Restitution</p>
+                        <div class="details">
+                            <div class="detail-grid">
+                                <div class="detail-card"><strong>Phase A — Captation :</strong><br>Caméras
+                                    360°/multi-cam, son binaural, repérage lumière.</div>
+                                <div class="detail-card"><strong>Phase B — Sculpture :</strong><br>Nettoyage,
+                                    reconstruction 3D, montage émotionnel.</div>
+                                <div class="detail-card"><strong>Phase C/D :</strong><br>Conversion AR & restitution
+                                    avec lunettes/casque.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn" onclick="toggle(this)">Détails</button>
+                    </div>
+                </article>
+                <!--
+                <article class="step" data-step="4">
+                    <div class="num">4</div>
+                    <div>
+                        <h3>Les bénéfices humains et émotionnels</h3>
+                        <p>Préserver, rapprocher le passé, réconforter, offrir des cadeaux émotionnels.</p>
+
+                        <div class="details">
+                            <div class="detail-grid">
+                                <div class="detail-card"><strong>Impact :</strong><br>Thérapie, patrimoine familial,
+                                    valeur mémorielle.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn" onclick="toggle(this)">Détails</button>
+                    </div>
+                </article>
+
+                -->
+                <article class="step" data-step="4">
+                    <div class="num">4</div>
+                    <div>
+                        <h3>Une analyse Critique détaillée du projet</h3>
+                        <p>mettant en lumière les forces, les défis et les contraintes techniques.</p>
+                    </div>
+                </article>
+                <article class="step" data-step="5">
+                    <div class="num">5</div>
+                    <div>
+                        <h3>Formulaire de Contact — Proposition d'accompagnement</h3>
+                        <p>Impact sociétal, invitation à se connecter à nos racines émotionnelles, appel à l’action :
+                            réserver ou tester une capsule.</p>
+
+                        <div class="details">
+                            <div class="detail-grid">
+                                <div class="detail-card"><strong>Call-to-action :</strong><br>Invite à réserver un essai
+                                    ou à regarder une démo.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn" onclick="toggle(this)">Détails</button>
+                    </div>
+                </article>
+            </div>
+
+            <footer>
+                Astuce : clique sur "Déplier tout" pour préparer ta présentation, puis imprime en PDF pour un support
+                papier.
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Toggle one
+        function toggle(btn) {
+            const step = btn.closest('.step');
+            step.classList.toggle('expanded');
+            btn.textContent = step.classList.contains('expanded') ? 'Réduire' : 'Détails';
+        }
+
+        // Toggle all (open/close)
+        function toggleAll(open) {
+            document.querySelectorAll('.step').forEach(s => {
+                s.classList.toggle('expanded', !!open);
+                const b = s.querySelector('.btn');
+                if (b) b.textContent = open ? 'Réduire' : 'Détails';
+            });
+        }
+
+        // Optional: expand first step on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const first = document.querySelector('.step');
+            if (first) {
+                first.classList.add('expanded');
+                const b = first.querySelector('.btn');
+                if (b) b.textContent = 'Réduire';
+            }
+        });
+    </script>
+</body>
+
+</html>
