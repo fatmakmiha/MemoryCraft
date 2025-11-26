@@ -1,12 +1,7 @@
-// Original file: /mnt/data/2f517dc3-4aaa-4512-849b-8ad2ffb72887.js
-// MemoryCraftSite_improved.jsx
-// Version E (équilibrée) — amélioration du design, accessibilité, structure, performance
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function MemoryCraftSite() {
-
   const warmBrown = "#5F4A39";
 
   const processSteps = [
@@ -33,7 +28,7 @@ export default function MemoryCraftSite() {
       desc: "Intégration du retour haptique et des diffuseurs olfactifs.",
       //Revivez le souvenir comme si les gens étaient là, devant vous. Le rire, l'étreinte, la danse - tout redevient présent.
       img: "https://res.cloudinary.com/fatmakmiha/image/upload/v1764098256/WhatsApp_Image_2025-11-25_%C3%A0_15.42.54_92f6f2ac_kmflyn.jpg",
-    }
+    },
   ];
 
   // form state (simple controlled form + feedback)
@@ -47,8 +42,6 @@ export default function MemoryCraftSite() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder: ici vous appellerez votre API / service mail
-    // For now simulate success
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };
@@ -82,9 +75,9 @@ export default function MemoryCraftSite() {
               </a>
               <a
                 className="px-4 py-2 rounded-full border border-transparent text-sm font-medium hover:bg-white/60 transition"
-                href="#gallery"
+                href="#avantages"
               >
-                Galerie
+                Informations
               </a>
             </div>
           </nav>
@@ -152,8 +145,6 @@ export default function MemoryCraftSite() {
                     Réserver un essai
                   </motion.a>
                 </motion.div>
-
-                
               </motion.div>
             </div>
           </section>
@@ -336,8 +327,6 @@ export default function MemoryCraftSite() {
             </div>
           </section>
 
-          
-
           {/* MOMENTS */}
           <section className="max-w-7xl mx-auto px-6 py-20">
             <h2 className="text-center text-3xl md:text-4xl font-extrabold text-gray-800">
@@ -406,7 +395,6 @@ export default function MemoryCraftSite() {
             </div>
           </section>
 
-          
           {/* TéMOIGNAGES */}
           <section className="max-w-6xl mx-auto py-20 px-6">
             <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900">
@@ -454,7 +442,8 @@ export default function MemoryCraftSite() {
               <div className="relative group rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="https://res.cloudinary.com/fatmakmiha/image/upload/v1764098284/WhatsApp_Image_2025-11-25_%C3%A0_16.02.14_00890c8b_lycqsz.jpg"
-                  className="w-full h-80 object-cover"alt=""
+                  className="w-full h-80 object-cover"
+                  alt=""
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-4 text-center">
                   Moment Réel
@@ -463,7 +452,8 @@ export default function MemoryCraftSite() {
               <div className="relative group rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="https://res.cloudinary.com/fatmakmiha/image/upload/v1764098268/WhatsApp_Image_2025-11-25_%C3%A0_16.01.23_d7f24881_it3duv.jpg"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition duration-500" alt=""
+                  className="w-full h-80 object-cover group-hover:scale-105 transition duration-500"
+                  alt=""
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-[#F7D18A]/90 text-black font-semibold p-4 text-center">
                   Version Immersive 4D
@@ -484,14 +474,16 @@ export default function MemoryCraftSite() {
               <div className="relative rounded-3xl overflow-hidden shadow-xl w-full max-w-3xl">
                 <video
                   src="https://res.cloudinary.com/fatmakmiha/video/upload/v1764103315/1121_etos8i.mp4"
-                  controls autoPlay 
+                  controls
+                  autoPlay
                   className="w-full h-auto"
                 ></video>
               </div>
               <div className="relative rounded-3xl overflow-hidden shadow-xl w-full max-w-3x">
                 <video
                   src="https://res.cloudinary.com/fatmakmiha/video/upload/v1764108566/WhatsApp_Vid%C3%A9o_2025-11-19_%C3%A0_15.22.40_e0136f4a_zagtuy.mp4"
-                  controls autoPlay
+                  controls
+                  autoPlay
                   className="w-full h-auto"
                 ></video>
               </div>
@@ -540,7 +532,6 @@ export default function MemoryCraftSite() {
             </div>
           </section>
 
-          
           <section className="max-w-6xl mx-auto py-20 px-6">
             <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900">
               Pourquoi MemoryCraft ?
@@ -631,6 +622,98 @@ export default function MemoryCraftSite() {
                 Je réponds généralement sous 48h ouvrées. Vos données restent
                 privées et sont traitées avec soin.
               </p>
+            </div>
+          </section>
+
+          <section id="avantages" className="max-w-5xl mx-auto px-6 py-20">
+            <h2 className="text-3xl font-extrabold text-center text-gray-900">
+              Avantages, Inconvénients et Limites
+            </h2>
+
+            <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
+              Une analyse détaillée du projet <strong>MemoryCraft</strong> et de
+              ses expériences immersives 4D, mettant en lumière les forces, les
+              défis et les contraintes techniques.
+            </p>
+
+            {/* AVANTAGES */}
+            <div className="mt-14 bg-green-50 p-8 rounded-2xl shadow">
+              <h3 className="text-2xl font-bold text-green-700">✔ Avantages</h3>
+              <ul className="mt-4 space-y-3 text-gray-700">
+                <li>
+                  • Immersion émotionnelle intense favorisant la connexion aux
+                  souvenirs.
+                </li>
+                <li>
+                  • Valorisation et préservation de moments uniques et
+                  personnels.
+                </li>
+                <li>
+                  • Utilisation de technologies de pointe : VR, son binaural,
+                  captation 360°.
+                </li>
+                <li>
+                  • Expérience hautement personnalisable selon les besoins et
+                  préférences du client.
+                </li>
+                <li>
+                  • Concept innovant et rare en Tunisie, offrant une exclusivité
+                  culturelle et technologique.
+                </li>
+                <li>
+                  • Potentiel d’application dans divers domaines : art,
+                  tourisme, thérapie, événements.
+                </li>
+              </ul>
+            </div>
+
+            {/* INCONVÉNIENTS */}
+            <div className="mt-14 bg-red-50 p-8 rounded-2xl shadow">
+              <h3 className="text-2xl font-bold text-red-700">
+                ✘ Inconvénients
+              </h3>
+              <ul className="mt-4 space-y-3 text-gray-700">
+                <li>
+                  • Coût de production relativement élevé, limitant
+                  l’accessibilité.
+                </li>
+                <li>
+                  • Nécessité d’un équipement VR performant pour une expérience
+                  optimale.
+                </li>
+                <li>
+                  • Processus de montage et de post-production plus long qu’une
+                  vidéo classique.
+                </li>
+                <li>
+                  • Courbe d’apprentissage pour les utilisateurs novices en VR.
+                </li>
+              </ul>
+            </div>
+
+            {/* LIMITES */}
+            <div className="mt-14 bg-yellow-50 p-8 rounded-2xl shadow">
+              <h3 className="text-2xl font-bold text-yellow-700">
+                ⚠ Limites du Projet
+              </h3>
+              <ul className="mt-4 space-y-3 text-gray-700">
+                <li>
+                  • Forte dépendance aux technologies VR disponibles et à leur
+                  évolution.
+                </li>
+                <li>
+                  • Risque de malaise (motion sickness) chez certaines personnes
+                  sensibles.
+                </li>
+                <li>
+                  • Nécessité de conditions optimales de lumière et d’espace
+                  pour filmer.
+                </li>
+                <li>
+                  • Accessibilité limitée pour les publics non familiers avec
+                  les environnements immersifs.
+                </li>
+              </ul>
             </div>
           </section>
 
