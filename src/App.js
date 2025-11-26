@@ -6,11 +6,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function MemoryCraftSite() {
-  const [modal, setModal] = React.useState(null);
 
   const warmBrown = "#5F4A39";
-
-  
 
   const processSteps = [
     {
@@ -457,7 +454,7 @@ export default function MemoryCraftSite() {
               <div className="relative group rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="https://res.cloudinary.com/fatmakmiha/image/upload/v1764098284/WhatsApp_Image_2025-11-25_%C3%A0_16.02.14_00890c8b_lycqsz.jpg"
-                  className="w-full h-80 object-cover"
+                  className="w-full h-80 object-cover"alt=""
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-4 text-center">
                   Moment Réel
@@ -466,7 +463,7 @@ export default function MemoryCraftSite() {
               <div className="relative group rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="https://res.cloudinary.com/fatmakmiha/image/upload/v1764098268/WhatsApp_Image_2025-11-25_%C3%A0_16.01.23_d7f24881_it3duv.jpg"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition duration-500"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition duration-500" alt=""
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-[#F7D18A]/90 text-black font-semibold p-4 text-center">
                   Version Immersive 4D
