@@ -1,3 +1,102 @@
+@media print {
+
+  /* Force l'impression des backgrounds */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background-color: #fff !important; /* ou la couleur de ton site */
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Force les background-image même si le navigateur les bloque */
+  .force-bg {
+    background-color: inherit !important;
+    background-image: inherit !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Empêche le navigateur de simplifier la mise en page */
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Empêche les coupures d'images */
+  img {
+    page-break-inside: avoid !important;
+  }
+}
+/* ===============================
+   IMPRESSION — FULL DESIGN
+   =============================== */
+@media print {
+
+  /* Force l’impression des couleurs, dégradés, backgrounds */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: inherit !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* IMPORTANT : permet aux backgrounds Tailwind de s’imprimer */
+  body, section, div {
+    background-image: inherit !important;
+    background-color: inherit !important;
+  }
+
+  /* Les images ne doivent jamais être coupées */
+  img {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Empêche les coupures bizarres */
+  * {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Le header fixed doit devenir normal pour éviter une superposition */
+  header, nav {
+    position: static !important;
+    background: inherit !important;
+  }
+
+  /* Supprime les animations framer-motion */
+  [style*="transform"], 
+  [style*="opacity"],
+  .motion,
+  .framer-motion,
+  div, img, section {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Supprime les boutons inutiles à l’impression */
+  a[href^="#"],
+  button {
+    display: none !important;
+  }
+
+  /* Empêche les marges automatique d'imprimante */
+  @page {
+    margin: 0;
+  }
+}
+
+
+
 .App {
   text-align: center;
 }
